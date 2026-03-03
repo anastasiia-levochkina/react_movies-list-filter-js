@@ -12,12 +12,10 @@ export const App = () => {
     const title = movie.title.toLowerCase();
     const description = movie.description.toLowerCase();
 
-    // if query contains spaces — search only by title
     if (normalizedQuery.includes(' ')) {
       return title.includes(normalizedQuery);
     }
 
-    // otherwise search by title or description
     return (
       title.includes(normalizedQuery) || description.includes(normalizedQuery)
     );
